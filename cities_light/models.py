@@ -104,6 +104,7 @@ class Country(Base):
     """
 
     name = models.CharField(max_length=200, unique=True)
+    chinese_name = models.CharField(max_length=200, default='')
 
     code2 = models.CharField(max_length=2, null=True, blank=True, unique=True)
     code3 = models.CharField(max_length=3, null=True, blank=True, unique=True)
@@ -122,6 +123,7 @@ class Region(Base):
     """
 
     name = models.CharField(max_length=200, db_index=True)
+    chinese_name = models.CharField(max_length=200, default='', db_index=True)
     display_name = models.CharField(max_length=200)
     geoname_code = models.CharField(max_length=50, null=True, blank=True,
         db_index=True)
@@ -168,6 +170,7 @@ class City(Base):
     """
 
     name = models.CharField(max_length=200, db_index=True)
+    chinese_name = models.CharField(max_length=200, default='', db_index=True)
     display_name = models.CharField(max_length=200)
 
     search_names = ToSearchTextField(max_length=4000,

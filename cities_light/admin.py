@@ -17,6 +17,7 @@ class CountryAdmin(admin.ModelAdmin):
 
     list_display = (
         'name',
+        'chinese_name',
         'code2',
         'code3',
         'continent',
@@ -50,6 +51,7 @@ class RegionAdmin(admin.ModelAdmin):
     )
     list_display = (
         'name',
+        'chinese_name',
         'country',
     )
     form = RegionForm
@@ -70,6 +72,7 @@ class CityAdmin(admin.ModelAdmin):
     """
     list_display = (
         'name',
+        'chinese_name',
         'region',
         'country',
     )

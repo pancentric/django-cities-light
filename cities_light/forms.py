@@ -13,7 +13,7 @@ class CountryForm(forms.ModelForm):
     """
     class Meta:
         model = Country
-        fields = ('name', 'continent', 'alternate_names')
+        fields = ('name', 'chinese_name', 'continent', 'alternate_names')
 
 
 class RegionForm(forms.ModelForm):
@@ -22,7 +22,7 @@ class RegionForm(forms.ModelForm):
     """
     class Meta:
         model = Region
-        fields = ('name', 'country', 'alternate_names')
+        fields = ('name', 'chinese_name', 'country', 'alternate_names')
 
 
 class CityForm(forms.ModelForm):
@@ -31,4 +31,4 @@ class CityForm(forms.ModelForm):
     """
     class Meta:
         model = City
-        fields = ('name', 'region', 'country', 'alternate_names')
+        fields = ('name', 'chinese_name', 'region', 'country', 'alternate_names')

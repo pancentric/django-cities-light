@@ -436,6 +436,13 @@ It is possible to force the import of files which weren't downloaded using the
                         # here's where it will all start ...
                         continue
 
+                    # Pancentric hack: Chinese translations get stored in a new field.
+                    # We always take the first available translation - alternative Chinese
+                    # translations are ignored.    
+                    if lang == 'zh-CN':
+                        model.chinese_name = force_text(names[0])
+                        save = True
+
                     for name in names:
                         name = force_text(name)
                         if name == model.name:
