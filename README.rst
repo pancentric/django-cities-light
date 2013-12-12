@@ -1,3 +1,6 @@
+ABOUT THIS BRANCH: used for the project where we want Chinese translations of country and city
+names to be easily available.
+
 .. image:: https://secure.travis-ci.org/yourlabs/django-cities-light.png?branch=master
     :target: http://travis-ci.org/yourlabs/django-cities-light
 .. image:: https://pypip.in/d/django-cities-light/badge.png
