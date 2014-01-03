@@ -22,6 +22,7 @@ class CountryAdmin(admin.ModelAdmin):
         'code3',
         'continent',
         'tld',
+        'active',
     )
     search_fields = (
         'name',
@@ -32,6 +33,7 @@ class CountryAdmin(admin.ModelAdmin):
     )
     list_filter = (
         'continent',
+        'active',
     )
     form = CountryForm
 admin.site.register(Country, CountryAdmin)
@@ -53,6 +55,7 @@ class RegionAdmin(admin.ModelAdmin):
         'name',
         'chinese_name',
         'country',
+        'active',
     )
     form = RegionForm
 admin.site.register(Region, RegionAdmin)
@@ -75,6 +78,7 @@ class CityAdmin(admin.ModelAdmin):
         'chinese_name',
         'region',
         'country',
+        'active',
     )
     search_fields = (
         'search_names',
