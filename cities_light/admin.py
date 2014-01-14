@@ -85,6 +85,7 @@ class CityAdmin(admin.ModelAdmin):
     )
     list_filter = (
         'country__continent',
+        'active',
         'country',
     )
     #form = CityForm
