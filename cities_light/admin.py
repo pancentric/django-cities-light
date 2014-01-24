@@ -32,8 +32,8 @@ class CountryAdmin(admin.ModelAdmin):
         'tld'
     )
     list_filter = (
-        'continent',
         'active',
+        'continent',
     )
     form = CountryForm
 admin.site.register(Country, CountryAdmin)
@@ -84,8 +84,8 @@ class CityAdmin(admin.ModelAdmin):
         'search_names',
     )
     list_filter = (
-        'country__continent',
         'active',
+        'country__continent',
         'country',
     )
     #form = CityForm
