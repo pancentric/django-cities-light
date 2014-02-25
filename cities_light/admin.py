@@ -11,6 +11,7 @@ from .settings import *
 
 
 class CountryAdmin(admin.ModelAdmin):
+
     """
     ModelAdmin for Country.
     """
@@ -36,10 +37,17 @@ class CountryAdmin(admin.ModelAdmin):
         'continent',
     )
     form = CountryForm
+    fieldsets = (
+        (None, {
+            'fields': ('active', 'name', 'chinese_name',
+                       'continent')
+        }),
+    )
 admin.site.register(Country, CountryAdmin)
 
 
 class RegionAdmin(admin.ModelAdmin):
+
     """
     ModelAdmin for Region.
     """
@@ -62,6 +70,7 @@ admin.site.register(Region, RegionAdmin)
 
 
 class CityChangeList(ChangeList):
+
     def get_query_set(self, request):
         if 'q' in list(request.GET.keys()):
             request.GET = copy(request.GET)
@@ -70,6 +79,7 @@ class CityChangeList(ChangeList):
 
 
 class CityAdmin(admin.ModelAdmin):
+
     """
     ModelAdmin for City.
     """
@@ -89,6 +99,12 @@ class CityAdmin(admin.ModelAdmin):
         'country',
     )
     #form = CityForm
+    fieldsets = (
+        (None, {
+            'fields': ('name_ascii', 'active', 'name', 'chinese_name',
+                       'display_name', 'latitude', 'longitude', 'region', 'country')
+        }),
+    )
 
     def get_changelist(self, request, **kwargs):
         return CityChangeList
